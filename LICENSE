@@ -19,17 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This MIT licence covers the app: everything in this repository except the
-items below.
-
-- The curriculum in src/curriculum/ (lesson text, exercises, starter and
-  solution files, and lesson images) is licensed separately under Creative
-  Commons Attribution-NonCommercial-ShareAlike 4.0. See CONTENT-LICENSE.md.
-- The fonts are licensed under the SIL Open Font License 1.1. See
-  licenses/FONTS.md.
-- The Rod Fernandez Design name, wordmark and logo mark (public/brand/ and
-  public/favicon.png) are not licensed under either licence. See the
-  "Name and logo" section of README.md.

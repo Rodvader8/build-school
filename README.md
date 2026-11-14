@@ -104,7 +104,7 @@ Writing rules for lesson text: friendly and direct, contractions, British/Austra
 
 ## Licence
 
-- **The app** is MIT licensed. See [LICENSE](LICENSE).
+- **The app** is MIT licensed (see [LICENSE](LICENSE)). That covers everything in this repository except the curriculum, the fonts and the name and logo, which are listed below.
 - **The curriculum** (`src/curriculum/`) is [CC BY-NC-SA 4.0](CONTENT-LICENSE.md): learn from it, teach with it and remix it, with credit, but don't sell it. The code you write while learning is yours.
 - **Fonts** are under the SIL Open Font License. See [licenses/FONTS.md](licenses/FONTS.md).
 
