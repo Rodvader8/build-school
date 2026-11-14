@@ -1,0 +1,37 @@
+name: ci-debug
+# Temporary: runs only the lessons that failed on the first full run, and prints what differs on this machine.
+on:
+  push:
+    branches: [add-ci]
+
+permissions:
+  contents: read
+
+jobs:
+  failing-lessons:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg libasound2-dev pkg-config python3-pil
+      - name: Show tool versions
+        run: |
+          git --version; python3 --version; python3 -c "import PIL; print('PIL', PIL.__version__)"
+          git config --global --list || true
+      - name: Reproduce the git-bisect lesson by hand
+        run: |
+          T=$(mktemp -d); cp -r src/curriculum/workflow/03-finding-a-regression-with-git-bisect/solution/. "$T"/; cd "$T"
+          bash setup.sh; (bash solve.sh; echo "solve exit: $?") || echo "solve FAILED: $?"
+          echo "---- bisect.log"; cat bisect.log || true
+          echo "---- check.py"; python3 check.py || true
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx vitest run -t "workflow-03|python-10|python-11|media-04|media-05"

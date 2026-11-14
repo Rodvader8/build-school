@@ -17,6 +17,8 @@ export default defineConfig({
   },
   test: {
     include: ['tests/**/*.test.ts'],
+    // Cleaning up hundreds of throwaway lesson folders (some with node_modules) can take a while on a slow disk.
+    hookTimeout: 180_000,
     // Lesson checks read computed styles and layout, so they run in real Chromium (one instance).
     browser: { enabled: true, headless: true, provider: playwright(), instances: [{ browser: 'chromium' }] },
   },
