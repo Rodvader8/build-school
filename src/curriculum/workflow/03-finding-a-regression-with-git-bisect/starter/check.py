@@ -34,7 +34,7 @@ check("the history is intact: the tag and the guilty commit are still there", la
 def saved_log():
     text = (root / "bisect.log").read_text()
     judgments = re.findall(r"^git bisect (?:good|bad) ", text, re.M)
-    return "first bad commit" in text and len(judgments) >= 4
+    return re.search(r"first '?bad'? commit", text) is not None and len(judgments) >= 4
 
 
 def answer_is_culprit():
