@@ -1,0 +1,7 @@
+body { font-family: system-ui, sans-serif; margin: 0; color: #1b2a22; line-height: 1.5; }
+header { padding: 1rem 2rem; background: #e7f1e9; }
+h1 { margin: 0; font-size: 1.25rem; }
+main { padding: 3rem 2rem; max-width: 40rem; }
+.cta { display: inline-block; padding: 0.75rem 1.5rem; color: #ffffff; background: #1f6b45; text-decoration: none; border-radius: 4px; }
+.after .cta { background: #b3261e; padding: 1.25rem 3rem; }
+.almost .cta { background: #206c46; }

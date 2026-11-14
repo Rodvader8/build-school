@@ -1,0 +1,17 @@
+---
+import { ironbark } from '../data/ironbark.js';
+
+const path = Astro.url.pathname;
+const current = (href) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class="header">
+  <nav class="header__nav" aria-label="Main">
+    <a class="header__brand" href="/">{ironbark.name}</a>
+    <ul class="header__links">
+      {ironbark.nav.map((n) => (
+        <li><a href={n.href} aria-current={current(n.href) ? 'page' : undefined}>{n.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>

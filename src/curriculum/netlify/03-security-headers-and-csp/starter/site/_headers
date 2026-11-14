@@ -1,0 +1,4 @@
+# Headers Netlify sends with every page. Each path, then its indented headers.
+/*
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy: default-src 'self'

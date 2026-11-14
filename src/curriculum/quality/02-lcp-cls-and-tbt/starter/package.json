@@ -1,0 +1,10 @@
+{
+  "name": "bluegum-vitals",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "chrome-launcher": "^1.2.0",
+    "lighthouse": "13.6.0",
+    "playwright": "1.65.0"
+  }
+}

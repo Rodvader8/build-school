@@ -1,0 +1,16 @@
+{
+  "name": "tideline-budgets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/budgets.mjs",
+    "lighthouse": "node scripts/assert-lighthouse.mjs"
+  },
+  "devDependencies": {
+    "chrome-launcher": "^1.2.0",
+    "lighthouse": "13.6.0",
+    "playwright": "1.65.0",
+    "vite": "^8.3.0"
+  }
+}

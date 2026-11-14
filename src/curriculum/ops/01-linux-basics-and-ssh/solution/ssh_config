@@ -1,0 +1,9 @@
+# A practice copy of ~/.ssh/config. Fill in the webserver block:
+#   host address 203.0.113.10, user deploy, port 2222,
+#   key ~/.ssh/id_ed25519, and use only that key.
+Host webserver
+    HostName 203.0.113.10
+    User deploy
+    Port 2222
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes

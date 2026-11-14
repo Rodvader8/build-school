@@ -1,0 +1,22 @@
+/* The slow way: the browser can't even start on the fonts until this line is read. */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Geist:wght@100..900&display=swap');
+
+body {
+  font-family: 'Geist', system-ui, sans-serif;
+  color: #1b2a22;
+  line-height: 1.6;
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  line-height: 1.05;
+}
+
+.lede {
+  font-size: 1.25rem;
+}

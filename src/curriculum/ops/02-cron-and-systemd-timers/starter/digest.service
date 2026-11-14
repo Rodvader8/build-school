@@ -1,0 +1,4 @@
+[Unit]
+Description=Send the nightly digest
+
+# Add a [Service] section: Type=oneshot, and ExecStart with the full path /opt/tools/digest.sh

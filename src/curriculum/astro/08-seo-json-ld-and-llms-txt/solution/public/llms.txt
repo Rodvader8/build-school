@@ -1,0 +1,19 @@
+# Saltmarsh Bakehouse
+
+> Saltmarsh Bakehouse is an invented neighbourhood bakery in Tidewater Bay, NSW. It bakes long-ferment sourdough, seeded rye and Saturday cinnamon scrolls, and supplies bread to local cafes.
+
+## Pages
+
+- [Home](https://saltmarsh.example/): what the bakehouse makes, when it's open and how to call
+
+## What we do
+
+- Daily sourdough loaves
+- Wholesale bread for cafes
+- Saturday cinnamon scrolls
+
+## Contact
+
+- Phone: +61 2 5550 0143
+- Email: hello@saltmarsh.example
+- Area: Tidewater Bay, NSW

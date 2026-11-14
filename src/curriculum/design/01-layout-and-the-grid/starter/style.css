@@ -1,0 +1,29 @@
+/* Looks only: the page already has colour and type. The layout is your job. */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0b0a14;
+  color: #ecebf5;
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+
+a { color: #22d3ee; }
+h1, h2, h3 { line-height: 1.15; }
+
+.card {
+  background: #15131f;
+  border: 1px solid #2a2740;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* ---- Layout starts here ---- */
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card { margin-bottom: 16px; }

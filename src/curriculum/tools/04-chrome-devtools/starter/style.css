@@ -1,0 +1,51 @@
+:root {
+  --bg: #0b0d12;
+  --card: #1b2030;
+  --text: #e8ecf5;
+  --accent: #7de3ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.sites {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* added by a teammate, "to make the cards neater" */
+.card .score {
+  color: #1b2030;
+}

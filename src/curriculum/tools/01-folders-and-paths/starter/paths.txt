@@ -1,0 +1,5 @@
+# One answer per line, after the colon. No quotes.
+A:
+B:
+C:
+D:

@@ -1,0 +1,5 @@
+{
+  "name": "report-loader",
+  "private": true,
+  "type": "module"
+}

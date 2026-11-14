@@ -1,0 +1,16 @@
+{
+  "business": "Crumb and Co. Wholesale",
+  "period": "Last 30 days",
+  "kpis": [
+    { "label": "Revenue", "value": "$116,670" },
+    { "label": "Orders", "value": "1,741" },
+    { "label": "Average order", "value": "$67.01" },
+    { "label": "Repeat customers", "value": "59.3%" }
+  ],
+  "customers": [
+    { "name": "Saltwater Bistro", "orders": 314, "revenue": "$26,880" },
+    { "name": "Ridgeway Hotel", "orders": 262, "revenue": "$20,741" },
+    { "name": "Harbour Cafe", "orders": 198, "revenue": "$14,310" },
+    { "name": "Juniper Kitchen", "orders": 148, "revenue": "$8,665" }
+  ]
+}

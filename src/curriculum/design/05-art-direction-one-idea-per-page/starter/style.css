@@ -1,0 +1,26 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0b0a14;
+  color: #ecebf5;
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+
+.hero { max-width: 1080px; margin-inline: auto; padding: 96px 24px; }
+
+.eyebrow { color: #f4a261; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; }
+h1 { font-size: 3rem; line-height: 1.1; letter-spacing: -0.03em; margin: 16px 0; }
+.emph { color: #e9c46a; }
+.lede { color: #a9a6bd; font-size: 1.25rem; max-width: 52ch; }
+
+.actions { display: flex; gap: 16px; margin: 32px 0; }
+.btn { padding: 12px 24px; border-radius: 999px; color: #0b0a14; text-decoration: none; transition: all 1.2s; }
+.btn--book { background: #2a9d8f; animation: pulse 1s infinite; }
+.btn--work { background: #e76f51; }
+.btn--guide { background: #8ab17d; }
+
+.proof { display: flex; gap: 48px; list-style: none; margin: 0; padding: 0; color: #a9a6bd; }
+.stat-number { display: block; font-size: 3.5rem; font-weight: 800; color: #f4a261; line-height: 1.1; }
+
+@keyframes pulse { 50% { transform: scale(1.12); } }

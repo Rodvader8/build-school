@@ -1,0 +1,19 @@
+{
+  "name": "bluegum-audit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit": "npm audit --audit-level=high"
+  },
+  "dependencies": {
+    "slugify-au": "^1.0.0",
+    "tiny-markdown": "^2.3.4",
+    "zip-sanitiser": "^3.1.0"
+  },
+  "devDependencies": {
+    "build-toolkit": "^4.2.0"
+  },
+  "overrides": {
+    "glob-match": "^3.4.2"
+  }
+}

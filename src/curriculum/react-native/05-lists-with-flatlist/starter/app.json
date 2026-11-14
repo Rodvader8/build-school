@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Hotel Marlow Arrivals",
+    "slug": "hotel-marlow-arrivals",
+    "version": "1.0.0",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    }
+  }
+}

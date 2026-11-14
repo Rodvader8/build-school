@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Saltmarsh Bakehouse | Slow sourdough by the sea" description="Saltmarsh Bakehouse is an invented bakery that bakes slowly, in a hot oven, before the sun comes up.">
+  <h1>Sourdough, baked slowly by the sea</h1>
+  <p class="lede">The three cards below fade up as the page loads. Right now the animation library comes from a CDN, and it ignores anyone who asked for less motion.</p>
+
+  <div class="product-grid">
+    <article class="product-card reveal"><h3>Country loaf</h3><p class="price">$9.00</p></article>
+    <article class="product-card reveal"><h3>Seeded rye</h3><p class="price">$10.50</p></article>
+    <article class="product-card reveal"><h3>Cinnamon scroll</h3><p class="price">$4.50</p></article>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+  <script is:inline>
+    gsap.from('.reveal', { opacity: 0, y: 24, duration: 0.8, stagger: 0.15 });
+  </script>
+</Base>

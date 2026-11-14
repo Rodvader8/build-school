@@ -1,0 +1,12 @@
+# Netlify reads this file on every deploy.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Deploy previews are public URLs, so they get told to stay out of search results.
+[context.deploy-preview.environment]
+  SITE_ENV = "preview"

@@ -1,0 +1,1 @@
+Plays a 440 Hz tone (concert A) for two seconds through your default speakers, using the same CPAL crate and callback shape as the Bramble DAW engine. **Turn your volume down first.** The first run downloads and compiles CPAL, so give it a minute.

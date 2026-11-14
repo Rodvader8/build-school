@@ -1,0 +1,14 @@
+---
+import { ironbark } from '../data/ironbark.js';
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__name">{ironbark.name}</p>
+    <p>Serving {ironbark.area}.</p>
+    <p>
+      <a href={`mailto:${ironbark.email}`}>{ironbark.email}</a><br />
+      <a href={`tel:${ironbark.phone.replace(/\s/g, '')}`}>{ironbark.phone}</a>
+    </p>
+  </div>
+</footer>

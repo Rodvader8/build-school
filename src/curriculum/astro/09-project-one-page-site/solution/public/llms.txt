@@ -1,0 +1,19 @@
+# Harbourlight Roasters
+
+> Harbourlight Roasters is an invented small-batch coffee roastery in Tidewater Bay, NSW. It roasts single-origin beans every Tuesday and Friday, posts them the same day and serves coffee at the roastery window.
+
+## Pages
+
+- [Home](https://harbourlight.example/): what we do, how we roast, reviews, questions and opening hours
+
+## What we do
+
+- Beans to your door
+- Roastery window
+- Cafe wholesale
+
+## Contact
+
+- Phone: +61 2 5550 0177
+- Email: beans@harbourlight.example
+- Area: Tidewater Bay, NSW

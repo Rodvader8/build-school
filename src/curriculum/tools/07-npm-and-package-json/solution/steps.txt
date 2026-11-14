@@ -1,0 +1,6 @@
+Set up the tool folder as a proper npm project. Work inside tool/ (cd tool).
+
+1. npm init -y
+2. npm install ./packages/slug-lite   (a real package would be: npm install dayjs)
+3. Add a script called "slugs" that runs node slugs.js, then npm run slugs
+4. Write .gitignore: node_modules, and keep secrets out too

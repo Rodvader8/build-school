@@ -1,0 +1,33 @@
+:root {
+  --ink: #2a1d1a;
+  --paper: #fbf5ec;
+  --crust: #b4561f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.6 Georgia, 'Times New Roman', serif;
+}
+
+.site-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid #e6d8c3; }
+.site-nav { display: flex; gap: 1.5rem; align-items: baseline; }
+.site-nav a { color: var(--ink); text-decoration: none; }
+.site-nav a:hover { color: var(--crust); }
+.site-nav .brand { margin-right: auto; font-weight: 700; font-size: 1.15rem; }
+
+main { max-width: 42rem; margin: 0 auto; padding: 3rem 1.5rem; }
+h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 1rem; }
+.lede { font-size: 1.2rem; color: #5b463f; }
+
+.site-footer { padding: 2rem 1.5rem; text-align: center; font-size: 0.9rem; color: #7a6258; }
+
+.product-grid { display: grid; gap: 1.25rem; margin-top: 2rem; }
+.product-card { border: 1px solid #e6d8c3; border-radius: 12px; padding: 1.25rem 1.5rem; background: #fffaf2; }
+.product-card h3 { margin: 0 0 0.25rem; font-size: 1.25rem; }
+.product-card a { color: var(--crust); }
+.product-card .price { margin: 0; font-weight: 700; color: var(--crust); }
+.product-card p { margin: 0.5rem 0 0; }

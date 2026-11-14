@@ -1,0 +1,14 @@
+{
+  "name": "saltmarsh-islands",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build"
+  },
+  "dependencies": {
+    "@astrojs/preact": "6.1.6",
+    "astro": "7.4.11",
+    "preact": "11.2.0"
+  }
+}

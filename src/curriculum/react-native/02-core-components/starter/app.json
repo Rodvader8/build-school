@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Hotel Marlow Rooms",
+    "slug": "hotel-marlow-rooms",
+    "version": "1.0.0",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    }
+  }
+}

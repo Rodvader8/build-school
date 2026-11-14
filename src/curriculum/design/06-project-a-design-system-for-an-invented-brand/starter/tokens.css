@@ -1,0 +1,9 @@
+/* tokens.css: invent your brand here. Everything on the specimen page reads from these.
+   Define on :root:
+     colours:   --color-bg, --color-surface, --color-text, --color-muted, --color-brand, --color-signal
+     type:      --font-heading, --font-body, and --step-0 to --step-5 (one ratio, base 16 to 18px)
+     spacing:   --space-1 to --space-6 (a base unit and its multiples)
+     shape:     --radius
+*/
+:root {
+}

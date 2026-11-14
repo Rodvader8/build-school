@@ -1,0 +1,27 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0b0a14;
+  color: #ecebf5;
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+
+.page { max-width: 1080px; margin-inline: auto; padding: 0 22px; }
+
+.section { padding: 70px 0 54px; }
+.section + .section { padding-top: 38px; }
+
+h2 { font-size: 2rem; margin: 14px 0 22px; }
+h3 { font-size: 1.25rem; margin: 0 0 11px; }
+p { margin: 0 0 13px; }
+.intro { margin-bottom: 30px; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 26px; }
+
+.card {
+  background: #15131f;
+  border: 1px solid #2a2740;
+  border-radius: 16px;
+  padding: 25px 20px 17px 23px;
+}

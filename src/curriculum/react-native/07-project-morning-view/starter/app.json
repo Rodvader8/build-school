@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Hotel Marlow Morning",
+    "slug": "hotel-marlow-morning",
+    "version": "1.0.0",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "scheme": "hotel-marlow-morning",
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}

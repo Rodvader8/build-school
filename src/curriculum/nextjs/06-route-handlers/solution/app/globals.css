@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fbf6ee;
+  --color-oat: #efe4d2;
+  --color-ink: #2a1f17;
+  --color-crust: #b4621f;
+  --color-crust-dark: #8a4a17;
+  --color-sage: #5d7a5a;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-ink antialiased;
+  }
+}

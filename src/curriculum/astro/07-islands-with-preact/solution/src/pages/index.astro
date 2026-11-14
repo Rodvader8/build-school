@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import Estimator from '../components/Estimator.jsx';
+---
+
+<Base title="Saltmarsh Bakehouse | Order estimator" description="Slide to choose how many country loaves you need and see the price straight away, from an invented bakery.">
+  <h1>How many loaves?</h1>
+  <p class="lede">Everything on this page is plain HTML except the slider below. That one piece is an island.</p>
+
+  <Estimator client:visible price={9} unit="loaf" />
+</Base>

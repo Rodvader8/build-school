@@ -1,0 +1,10 @@
+{
+  "name": "security-checklist",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scan": "node scripts/scan-secrets.mjs .",
+    "audit": "node scripts/audit-offline.mjs fixtures/npm-audit-clean.json",
+    "serve": "node src/serve.mjs"
+  }
+}

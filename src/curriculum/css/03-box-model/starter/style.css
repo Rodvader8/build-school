@@ -1,0 +1,34 @@
+body {
+  background-color: #0c1220;
+  color: #e8e4da;
+  font-family: system-ui, sans-serif;
+}
+
+h1 {
+  color: #f2c38b;
+}
+
+p {
+  color: #b8b2a4;
+}
+
+.nm-lede {
+  color: #e8e4da;
+  font-size: 1.25rem;
+}
+
+.nm-nav a {
+  color: #e8e4da;
+  text-decoration: none;
+}
+
+.nm-nav a:hover {
+  color: #f2c38b;
+}
+
+.nm-nav a:focus-visible {
+  outline: 2px solid #f2c38b;
+  outline-offset: 4px;
+}
+
+/* Lesson 3: box model rules below this line */

@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { businesses } from '../data/businesses';
+
+export function getStaticPaths() {
+  return businesses.map((business) => ({
+    params: { slug: business.slug },
+    props: { business },
+  }));
+}
+
+const { business } = Astro.props;
+const phoneHref = 'tel:' + business.phone.replace(/\s/g, '');
+---
+
+<Base title={`${business.name} | ${business.suburb}`} description={business.description}>
+  <h1>{business.name}</h1>
+  <p class="lede">{business.tagline}</p>
+
+  <h2>What we do</h2>
+  <ul class="service-list">
+    {business.services.map((s) => (
+      <li><strong>{s.name}</strong> {s.blurb}</li>
+    ))}
+  </ul>
+
+  <h2>Opening hours</h2>
+  <ul class="hours-list">
+    {business.hours.map((h) => (
+      <li><span>{h.days}</span> <span>{h.open}</span></li>
+    ))}
+  </ul>
+
+  <p class="contact">Call us on <a href={phoneHref}>{business.phone}</a></p>
+</Base>

@@ -1,0 +1,31 @@
+/* This page borrows its fonts from Google at run time. Every visitor's browser calls out to
+   another company before the text can settle, and the site leaks a request to a third party. */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Instrument+Serif&display=swap');
+
+:root {
+  --ink: #2a1d1a;
+  --paper: #fbf5ec;
+  --crust: #b4561f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.6 'Figtree', sans-serif;
+}
+
+.site-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid #e6d8c3; }
+.site-nav { display: flex; gap: 1.5rem; align-items: baseline; }
+.site-nav a { color: var(--ink); text-decoration: none; }
+.site-nav .brand { margin-right: auto; font-family: 'Instrument Serif', Georgia, serif; font-size: 1.5rem; }
+
+main { max-width: 42rem; margin: 0 auto; padding: 3rem 1.5rem; }
+h1, h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; line-height: 1.1; }
+h1 { font-size: 3.2rem; margin: 0 0 1rem; }
+h2 { font-size: 1.9rem; margin: 2.5rem 0 0.5rem; }
+.lede { font-size: 1.2rem; color: #5b463f; }
+
+.site-footer { padding: 2rem 1.5rem; text-align: center; font-size: 0.9rem; color: #7a6258; }

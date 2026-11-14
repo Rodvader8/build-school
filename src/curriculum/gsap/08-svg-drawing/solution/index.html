@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Self-drawing lines | Ellis Ward</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="gs-spacer"><p>Scroll down. The plan draws itself.</p></header>
+    <main class="gs-page">
+      <figure class="gs-plan">
+        <svg viewBox="0 0 600 360" role="img" aria-labelledby="plan-title">
+          <title id="plan-title">Ground floor plan: four rooms along a hallway, opening to a garden</title>
+          <path class="gs-ln" d="M40 40 H400 V300 H40 Z" />
+          <path class="gs-ln" d="M40 170 H400" />
+          <path class="gs-ln" d="M220 40 V170" />
+          <path class="gs-ln" d="M400 120 H470 C540 120 560 200 520 260 C490 305 440 310 400 300" />
+          <path class="gs-ln" d="M120 300 V240 M120 240 H170" />
+        </svg>
+        <figcaption class="gs-note">The Terrace: four original rooms, a new living addition and the garden.</figcaption>
+      </figure>
+    </main>
+    <footer class="gs-spacer"><p>That's the end.</p></footer>
+
+    <script src="/vendor/gsap/gsap.min.js"></script>
+    <script src="/vendor/gsap/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

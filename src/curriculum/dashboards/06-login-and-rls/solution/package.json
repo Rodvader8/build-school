@@ -1,0 +1,15 @@
+{
+  "name": "login-and-row-level-security",
+  "private": true,
+  "scripts": {
+    "dev": "node server.mjs 4856",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.0",
+    "@supabase/supabase-js": "^2.60.0"
+  },
+  "devDependencies": {
+    "vitest": "^5.1.0"
+  }
+}

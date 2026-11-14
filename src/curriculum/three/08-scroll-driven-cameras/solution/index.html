@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scroll-driven camera</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+      { "imports": { "three": "/vendor/three/build/three.module.js", "three/addons/": "/vendor/three/examples/jsm/" } }
+    </script>
+  </head>
+  <body>
+    <canvas class="t-canvas" aria-hidden="true"></canvas>
+    <main class="t-story">
+      <section class="t-beat">
+        <h1>Most sites are the same corridor</h1>
+        <p>Scroll down. The words stay real text on the page. The 3D is only the backdrop.</p>
+      </section>
+      <section class="t-beat">
+        <h2>Then the camera picks up speed</h2>
+        <p>Each beat gets its own stretch of the scroll bar, so nothing important gets skipped.</p>
+      </section>
+      <section class="t-beat">
+        <h2>And it brakes at the end</h2>
+        <p>The last view is the one a visitor who never scrolls would see, so it has to work on its own.</p>
+      </section>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

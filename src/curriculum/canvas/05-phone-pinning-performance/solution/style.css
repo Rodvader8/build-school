@@ -1,0 +1,110 @@
+/* Shared styles for the Canvas track. You don't need to change this file. */
+:root {
+  --cv-bg: #0e1018;
+  --cv-panel: #171a26;
+  --cv-line: #2a2e42;
+  --cv-text: #e9ebf5;
+  --cv-muted: #9ca2b8;
+  --cv-accent: #f59e6c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cv-bg);
+  color: var(--cv-text);
+  font: 16px/1.6 system-ui, sans-serif;
+}
+
+.cv-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+h1,
+h2 {
+  margin: 0 0 12px;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+.cv-note {
+  color: var(--cv-muted);
+}
+
+.cv-kicker {
+  color: var(--cv-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cv-scene {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  background-color: #05060c;
+}
+
+.cv-spacer {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  color: var(--cv-muted);
+}
+
+/* clip, not hidden: hidden makes the shell a scroll container and silently breaks position: sticky. */
+.cv-shell {
+  overflow-x: clip;
+}
+
+/* The hero is as tall as one screen plus the distance the sequence plays over. */
+.cv-hero {
+  height: calc(100svh + var(--travel, 0px));
+}
+
+.cv-hero__inner {
+  position: sticky;
+  top: 0;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 24px 16px;
+}
+
+.cv-hero__copy {
+  width: 100%;
+  max-width: 600px;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background-color: var(--cv-accent);
+  color: #1a1020;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* The scene is 16:9 and as wide as fits, but never taller than --scene-h. */
+.cv-scene {
+  width: min(100%, calc(var(--scene-h, 100vw) * 16 / 9));
+  height: auto;
+  margin-top: 14px;
+}

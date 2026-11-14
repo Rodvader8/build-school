@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entities | Larkfield portal</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="db-page">
+      <h1>Your entities</h1>
+      <div class="db-row">
+        <label for="filter">Filter by name</label>
+        <input class="db-input" id="filter" type="search" autocomplete="off">
+      </div>
+      <section class="db-panel">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" data-key="name" aria-sort="none"><button class="db-sort" type="button">Entity</button></th>
+              <th scope="col" data-key="type" aria-sort="none"><button class="db-sort" type="button">Type</button></th>
+              <th scope="col" data-key="value" aria-sort="none"><button class="db-sort" type="button">Value</button></th>
+            </tr>
+          </thead>
+          <tbody class="db-entities"></tbody>
+        </table>
+      </section>
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

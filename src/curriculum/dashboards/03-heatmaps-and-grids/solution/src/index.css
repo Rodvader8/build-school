@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme static {
+  --color-ink: #0b0a14;
+  --color-surface: #15122b;
+  --color-line: #2a2650;
+  --color-cream: #f4f1ea;
+  --color-muted: #a8a4c8;
+  --color-accent: #22d3ee;
+  --color-good: #34d399;
+  --color-bad: #fb7185;
+}
+
+/* A five-step scale from quiet to busy. Dark to bright, so lightness carries the meaning as well as hue. */
+@theme static {
+  --color-heat-0: #1b1740;
+  --color-heat-1: #1d4a63;
+  --color-heat-2: #1a6f7e;
+  --color-heat-3: #22b2c4;
+  --color-heat-4: #67e8f9;
+}

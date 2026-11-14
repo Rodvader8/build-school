@@ -1,0 +1,69 @@
+---
+import '../styles/site.css';
+import { business } from '../data/saltmarsh';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og.jpg', Astro.site).href;
+
+// Structured data for search engines and AI assistants, built from the same data as the page.
+// The address is the suburb only: that's all a customer needs, and nothing private goes public.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Bakery',
+  name: business.name,
+  description: business.description,
+  url: new URL('/', Astro.site).href,
+  image: ogImage,
+  telephone: business.phone,
+  email: business.email,
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: business.suburb,
+    addressRegion: business.region,
+    addressCountry: business.country,
+  },
+  openingHoursSpecification: business.hours.map((h) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+};
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_AU" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav">
+        <a class="brand" href="/">Saltmarsh Bakehouse</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">Saltmarsh Bakehouse, an invented business for Build School.</footer>
+  </body>
+</html>

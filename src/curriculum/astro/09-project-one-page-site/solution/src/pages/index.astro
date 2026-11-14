@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro';
+import { Picture } from 'astro:assets';
+import { brand } from '../data/brand';
+import hero from '../assets/img/hero.jpg';
+import roastery from '../assets/img/roastery.jpg';
+
+const nav = [
+  { href: '#services', label: 'Services' },
+  { href: '#process', label: 'How we roast' },
+  { href: '#reviews', label: 'Reviews' },
+  { href: '#faqs', label: 'Questions' },
+  { href: '#contact', label: 'Visit' },
+];
+---
+
+<Base title={`${brand.name} | Small-batch coffee roasters in ${brand.suburb}`} description={brand.description}>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="brand" href="#top">{brand.name}</a>
+      {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__copy reveal">
+        <p class="eyebrow">{brand.suburb}, {brand.region}</p>
+        <h1>{brand.headline}</h1>
+        <p class="lede">{brand.intro}</p>
+        <a class="button" href="#contact">Visit the roastery</a>
+      </div>
+      <Picture
+        class="hero__img"
+        src={hero}
+        formats={['avif', 'webp']}
+        widths={[480, 800, 1200]}
+        sizes="(min-width: 52rem) 560px, 100vw"
+        alt={brand.heroAlt}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </section>
+
+    <section class="section" id="services">
+      <h2>What we do</h2>
+      <div class="card-grid">
+        {brand.services.map((s) => (
+          <article class="card reveal">
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <h2>From farm to bag</h2>
+      <ol class="steps">
+        {brand.steps.map((s) => (
+          <li class="step reveal">
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </li>
+        ))}
+      </ol>
+      <Picture
+        class="wide-img"
+        src={roastery}
+        formats={['avif', 'webp']}
+        widths={[480, 800, 1200]}
+        sizes="(min-width: 70rem) 1120px, 100vw"
+        alt={brand.roasteryAlt}
+        loading="lazy"
+      />
+    </section>
+
+    <section class="section" id="reviews">
+      <h2>What people say</h2>
+      <div class="quote-grid">
+        {brand.reviews.map((r) => (
+          <figure class="quote reveal">
+            <blockquote>{r.quote}</blockquote>
+            <figcaption>{r.who}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="faqs">
+      <h2>Questions</h2>
+      {brand.faqs.map((f) => (
+        <details class="faq">
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Visit the roastery</h2>
+      <div class="contact-grid">
+        <ul class="hours-list">
+          {brand.hours.map((h) => (
+            <li><span>{h.days.length > 1 ? `${h.days[0]} to ${h.days[h.days.length - 1]}` : h.days[0]}</span> <span>{h.opens} to {h.closes}</span></li>
+          ))}
+        </ul>
+        <p>
+          {brand.suburb}, {brand.region}<br />
+          <a href={`tel:${brand.phone.replace(/\s/g, '')}`}>{brand.phone}</a><br />
+          <a href={`mailto:${brand.email}`}>{brand.email}</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">{brand.name}, an invented business for Build School.</footer>
+
+  <script>
+    import '../scripts/home.js';
+  </script>
+</Base>

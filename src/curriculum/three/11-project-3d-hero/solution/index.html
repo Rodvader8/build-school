@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A 3D hero with a fallback</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+      { "imports": { "three": "/vendor/three/build/three.module.js", "three/addons/": "/vendor/three/examples/jsm/" } }
+    </script>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__stage">
+        <img class="hero__poster" src="poster.jpg" width="1600" height="900" alt="A glowing violet and cyan crystal on a dark background">
+        <canvas class="hero__canvas" aria-hidden="true" hidden></canvas>
+      </div>
+      <div class="hero__copy">
+        <p class="hero__eyebrow">Premium web design</p>
+        <h1>Websites that <span class="hero__outline">turn heads</span></h1>
+        <p class="hero__lede">The headline is real text and loads first. The 3D is a bonus that arrives a moment later, or not at all.</p>
+        <a class="hero__cta" href="#more">See how it works</a>
+      </div>
+    </header>
+    <main class="more" id="more">
+      <h2>Why a fallback matters</h2>
+      <p>Some visitors have asked their device for less motion. Some browsers have no WebGL. Some phones are slow. All of them still get a fast, good-looking page.</p>
+      <p>That's what a premium site means: the best version for people who can run it, and a complete version for everyone else.</p>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

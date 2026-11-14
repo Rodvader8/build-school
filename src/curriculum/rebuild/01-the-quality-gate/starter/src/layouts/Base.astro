@@ -1,0 +1,44 @@
+---
+import '../styles/site.css';
+import { site } from '../data/site.js';
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og.webp', Astro.site).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: site.name,
+  description: site.description,
+  image: ogImage,
+  telephone: site.phone,
+  email: site.email,
+  address: { '@type': 'PostalAddress', addressLocality: site.suburb, addressRegion: site.region, addressCountry: site.country },
+};
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Geist:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/extras.css" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

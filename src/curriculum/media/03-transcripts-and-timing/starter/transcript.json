@@ -1,0 +1,177 @@
+[
+ {
+  "word": "Hello",
+  "start": 0.0,
+  "end": 0.4
+ },
+ {
+  "word": "and",
+  "start": 0.46,
+  "end": 0.78
+ },
+ {
+  "word": "welcome",
+  "start": 0.84,
+  "end": 1.33
+ },
+ {
+  "word": "to",
+  "start": 1.4,
+  "end": 1.67
+ },
+ {
+  "word": "the",
+  "start": 1.73,
+  "end": 2.04
+ },
+ {
+  "word": "show.",
+  "start": 2.1,
+  "end": 2.5
+ },
+ {
+  "word": "Today",
+  "start": 3.4,
+  "end": 3.81
+ },
+ {
+  "word": "we're",
+  "start": 3.87,
+  "end": 4.27
+ },
+ {
+  "word": "talking",
+  "start": 4.33,
+  "end": 4.83
+ },
+ {
+  "word": "about",
+  "start": 4.89,
+  "end": 5.29
+ },
+ {
+  "word": "jobs",
+  "start": 5.35,
+  "end": 5.71
+ },
+ {
+  "word": "that",
+  "start": 5.77,
+  "end": 6.13
+ },
+ {
+  "word": "run",
+  "start": 6.19,
+  "end": 6.51
+ },
+ {
+  "word": "while",
+  "start": 6.57,
+  "end": 6.97
+ },
+ {
+  "word": "you",
+  "start": 7.03,
+  "end": 7.35
+ },
+ {
+  "word": "sleep.",
+  "start": 7.41,
+  "end": 7.86
+ },
+ {
+  "word": "A",
+  "start": 8.76,
+  "end": 8.98
+ },
+ {
+  "word": "cron",
+  "start": 9.04,
+  "end": 9.4
+ },
+ {
+  "word": "job",
+  "start": 9.46,
+  "end": 9.78
+ },
+ {
+  "word": "checks",
+  "start": 9.84,
+  "end": 10.29
+ },
+ {
+  "word": "every",
+  "start": 10.35,
+  "end": 10.75
+ },
+ {
+  "word": "site,",
+  "start": 10.81,
+  "end": 11.22
+ },
+ {
+  "word": "every",
+  "start": 11.47,
+  "end": 11.87
+ },
+ {
+  "word": "hour.",
+  "start": 11.93,
+  "end": 12.34
+ },
+ {
+  "word": "It",
+  "start": 13.24,
+  "end": 13.51
+ },
+ {
+  "word": "tells",
+  "start": 13.57,
+  "end": 13.97
+ },
+ {
+  "word": "you",
+  "start": 14.03,
+  "end": 14.35
+ },
+ {
+  "word": "only",
+  "start": 14.41,
+  "end": 14.77
+ },
+ {
+  "word": "when",
+  "start": 14.83,
+  "end": 15.19
+ },
+ {
+  "word": "something",
+  "start": 15.25,
+  "end": 15.83
+ },
+ {
+  "word": "changes.",
+  "start": 15.89,
+  "end": 16.43
+ },
+ {
+  "word": "That's",
+  "start": 17.33,
+  "end": 17.78
+ },
+ {
+  "word": "the",
+  "start": 17.84,
+  "end": 18.16
+ },
+ {
+  "word": "whole",
+  "start": 18.22,
+  "end": 18.62
+ },
+ {
+  "word": "trick.",
+  "start": 18.68,
+  "end": 19.13
+ }
+]

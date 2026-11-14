@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-14",
+  "arrivals": [
+    { "guest": "M. Okafor", "room": "Ocean Room", "nights": 3 },
+    { "guest": "J. Lindqvist", "room": "Garden Room", "nights": 2 },
+    { "guest": "A. Nguyen", "room": "Cliff Suite", "nights": 5 },
+    { "guest": "R. Patel", "room": "Ocean Room", "nights": 1 }
+  ]
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Orders dashboard | Crumb and Co.</title>
+    <meta name="description" content="Wholesale orders for Crumb and Co., at a glance." />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="top"><h1 id="title">Orders dashboard</h1><p id="period" class="muted"></p></header>
+    <main class="page">
+      <section aria-label="Key figures"><div id="kpis" class="kpis"></div></section>
+      <section aria-label="Customers">
+        <h2>Top customers</h2>
+        <table class="data"><thead><tr><th scope="col">Customer</th><th scope="col">Orders</th><th scope="col">Revenue</th></tr></thead><tbody id="rows"></tbody></table>
+      </section>
+    </main>
+  </body>
+</html>

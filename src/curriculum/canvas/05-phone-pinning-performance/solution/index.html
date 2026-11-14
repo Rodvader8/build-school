@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project: the phone hero | Sunrise</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="cv-shell">
+      <section class="cv-hero" data-hero>
+        <div class="cv-hero__inner">
+          <div class="cv-hero__copy" data-hero-copy>
+            <p class="cv-kicker">Headland Walks</p>
+            <h1>The sun comes up over the point</h1>
+            <p class="cv-note">Scroll to watch it rise. Everything you see is drawn from a short set of frames.</p>
+            <a class="cv-button" href="#book">Book a sunrise walk</a>
+          </div>
+          <canvas class="cv-scene" aria-label="A sun rising over a headland and the sea" role="img"></canvas>
+        </div>
+      </section>
+      <footer class="cv-spacer" id="book"><p>Walks leave at first light.</p></footer>
+    </div>
+
+    <script src="/vendor/gsap/gsap.min.js"></script>
+    <script src="/vendor/gsap/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

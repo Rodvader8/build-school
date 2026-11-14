@@ -1,0 +1,21 @@
+:root {
+  --ink: #1d2433;
+  --paper: #f7f5f0;
+  --accent: #1f6f78;
+  --line: #d9d4c7;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: system-ui, sans-serif; line-height: 1.5; }
+.page { max-width: 40rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
+.lede { margin: 0 0 1.5rem; color: #4a5368; }
+label { display: block; font-weight: 600; margin-top: 1rem; }
+textarea, input, select { width: 100%; margin-top: 0.25rem; padding: 0.6rem 0.75rem; border: 1px solid var(--line); border-radius: 0.5rem; font: inherit; background: #fff; }
+button { margin-top: 1rem; padding: 0.6rem 1.1rem; border: 0; border-radius: 0.5rem; background: var(--accent); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: wait; }
+.result { margin-top: 1.5rem; padding: 1rem 1.25rem; background: #fff; border: 1px solid var(--line); border-radius: 0.75rem; }
+.error { margin-top: 1.5rem; padding: 0.75rem 1rem; border-radius: 0.5rem; background: #fbeaea; color: #8a1f1f; }
+.meta { font-size: 0.85rem; color: #4a5368; }
+table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+td, th { text-align: left; padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--line); }
+.actions { display: flex; gap: 0.75rem; }

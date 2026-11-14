@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { businesses } from '../data/businesses';
+---
+
+<Base title="Local business pages" description="Two invented local businesses, each with a page built from its own data file.">
+  <h1>Local business pages</h1>
+  <p class="lede">Each page below is built from one data file.</p>
+  <ul class="business-list">
+    {businesses.map((b) => <li><a href={`/${b.slug}`}>{b.name}</a></li>)}
+  </ul>
+</Base>

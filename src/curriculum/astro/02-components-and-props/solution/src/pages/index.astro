@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+---
+
+<Base title="Saltmarsh Bakehouse | The daily bake" description="What's coming out of the Saltmarsh Bakehouse ovens today: country loaf, seeded rye and a cinnamon scroll.">
+  <h1>The daily bake</h1>
+  <p class="lede">Three things come out of the oven every morning. One component, used three times.</p>
+
+  <div class="product-grid">
+    <ProductCard name="Country loaf" price={9}>
+      <p>A 36-hour sourdough with a blistered crust.</p>
+    </ProductCard>
+    <ProductCard name="Seeded rye" price={10.5} href="/menu">
+      <p>Dense, malty and covered in sunflower and pumpkin seeds.</p>
+    </ProductCard>
+    <ProductCard name="Cinnamon scroll" price={4.5}>
+      <p>Saturdays only, and they go by nine.</p>
+    </ProductCard>
+  </div>
+</Base>

@@ -1,0 +1,13 @@
+body { margin: 0; background: #0d1117; color: #e8edf5; font: 16px/1.5 system-ui, sans-serif; }
+.top { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 0; }
+.top h1 { margin: 0; font-size: 1.5rem; }
+.muted { color: #a3afc2; margin: 0.25rem 0 0; }
+.page { max-width: 60rem; margin: 0 auto; padding: 1.25rem; display: grid; gap: 1.5rem; }
+.kpis { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+.kpi { background: #151b24; border: 1px solid #263041; border-radius: 14px; padding: 1.1rem; }
+.kpi p { margin: 0; }
+.kpi__label { color: #a3afc2; font-size: 0.9rem; }
+.kpi__value { font-size: 1.8rem; font-weight: 650; }
+.data { width: 100%; border-collapse: collapse; }
+.data th, .data td { text-align: left; padding: 0.6rem 0.75rem; border-top: 1px solid #263041; }
+.data thead th { color: #a3afc2; font-weight: 500; border-top: 0; }

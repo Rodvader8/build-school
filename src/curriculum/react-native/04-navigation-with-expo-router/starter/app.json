@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Hotel Marlow Navigation",
+    "slug": "hotel-marlow-navigation",
+    "version": "1.0.0",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "scheme": "hotel-marlow-navigation",
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}

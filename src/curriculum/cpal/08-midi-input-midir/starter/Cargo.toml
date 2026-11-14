@@ -1,0 +1,8 @@
+[package]
+name = "cpal_08_midi"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+midir = "0.11"
+midly = { version = "0.5", default-features = false, features = ["std"] }

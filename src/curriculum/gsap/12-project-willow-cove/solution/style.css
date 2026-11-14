@@ -1,0 +1,159 @@
+/* Shared styles for the GSAP track. You don't need to change this file. */
+:root {
+  --gs-bg: #0f0d18;
+  --gs-panel: #1a1726;
+  --gs-line: #2d2940;
+  --gs-text: #ece9f5;
+  --gs-muted: #a39db8;
+  --gs-violet: #8b5cf6;
+  --gs-cyan: #22d3ee;
+  --gs-pink: #f472b6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--gs-bg);
+  color: var(--gs-text);
+  font: 16px/1.6 system-ui, sans-serif;
+}
+
+.gs-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+h1,
+h2 {
+  margin: 0 0 12px;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+.gs-note {
+  color: var(--gs-muted);
+}
+
+.gs-kicker {
+  color: var(--gs-cyan);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.gs-cta {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--gs-violet);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gs-card {
+  padding: 20px;
+  border: 1px solid var(--gs-line);
+  border-radius: 12px;
+  background-color: var(--gs-panel);
+}
+
+.gs-row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gs-spacer {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  color: var(--gs-muted);
+}
+
+/* "Your first visit". By default every step is shown in a plain list and the dial arc is fully drawn.
+   JavaScript adds .is-live only when the pinned version will run. */
+.cb-visit {
+  padding: 64px 24px;
+}
+
+.cb-visit__inner {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  grid-template-columns: minmax(180px, 320px) 1fr;
+}
+
+.cb-dial {
+  width: 100%;
+  height: auto;
+}
+
+.cb-track,
+.cb-arc {
+  fill: none;
+  stroke-width: 6;
+}
+
+.cb-track {
+  stroke: var(--gs-line);
+}
+
+.cb-arc {
+  stroke: var(--gs-cyan);
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.cb-step {
+  padding: 16px 0;
+}
+
+.cb-visit.is-live {
+  display: grid;
+  min-height: 100vh;
+  align-content: center;
+}
+
+.cb-visit.is-live .cb-steps {
+  position: relative;
+  min-height: 12rem;
+}
+
+.cb-visit.is-live .cb-step {
+  position: absolute;
+  inset: 0;
+}
+
+.cb-fees {
+  padding-bottom: 120px;
+}
+
+@media (max-width: 700px) {
+  .cb-visit__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cb-dial {
+    max-width: 220px;
+  }
+}

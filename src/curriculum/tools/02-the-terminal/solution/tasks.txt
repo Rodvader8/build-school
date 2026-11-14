@@ -1,0 +1,8 @@
+Tidy the inbox folder using only the terminal.
+
+1. Make archive/2026/reports (all three levels, one command)
+2. COPY both report-*.csv files into archive/2026/reports, using a glob
+3. Make an images folder, then MOVE both shot-*.png files into it
+4. Rename inbox/notes.txt to inbox/meeting-notes.txt
+5. Delete the two .tmp files (look first with ls, then rm)
+6. Leave keep-me.txt exactly where it is

@@ -1,0 +1,8 @@
+{
+  "name": "bluegum-playwright-shots",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "playwright": "1.65.0"
+  }
+}

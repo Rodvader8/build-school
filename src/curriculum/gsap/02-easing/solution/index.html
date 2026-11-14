@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easing | GSAP</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="gs-page">
+      <p class="gs-kicker">Easing</p>
+      <h1>Same distance, four personalities</h1>
+      <p class="gs-note">Every ball travels the same 600px in the same time. Only the ease is different.</p>
+      <div class="gs-lane"><span class="gs-name">none</span><div class="gs-ball gs-ball-1"></div></div>
+      <div class="gs-lane"><span class="gs-name">power3.out</span><div class="gs-ball gs-ball-2"></div></div>
+      <div class="gs-lane"><span class="gs-name">back.out(1.7)</span><div class="gs-ball gs-ball-3"></div></div>
+      <div class="gs-lane"><span class="gs-name">elastic.out(1, 0.4)</span><div class="gs-ball gs-ball-4"></div></div>
+    </main>
+
+    <script src="/vendor/gsap/gsap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

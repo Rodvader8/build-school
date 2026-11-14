@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { ironbark } from '../data/ironbark.js';
+
+const page = ironbark.pages.services;
+---
+
+<Base page="services">
+  <section class="page-head">
+    <h1>{page.headline}</h1>
+    <p class="lede">{page.intro}</p>
+  </section>
+  <section class="section">
+    <div class="services">
+      {ironbark.services.map((s) => (
+        <article class="service reveal">
+          <h2>{s.title}</h2>
+          <p class="service__summary">{s.summary}</p>
+          <ul class="ticks">
+            {s.includes.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+    <p class="cta-row"><a class="button" href="/contact/">Ask about a service</a></p>
+  </section>
+</Base>

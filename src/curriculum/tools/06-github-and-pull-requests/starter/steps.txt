@@ -1,0 +1,8 @@
+The pull request loop, all on this computer. "origin" is a bare repo called origin.git, standing in for GitHub.
+
+1. In the lesson folder: git init --bare -b main origin.git
+2. cd site, git init -b main, set name + email for this repo only, cp .env.example .env
+3. Commit the page, then: git remote add origin ../origin.git, git push -u origin main
+4. git switch -c add-footer, add a <footer> to index.html, commit, git push -u origin add-footer
+5. The "pull request": git switch main, git merge --no-ff add-footer -m "Merge pull request: add footer"
+6. git push origin main (then you can delete the branch: git branch -d add-footer)

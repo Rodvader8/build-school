@@ -1,0 +1,43 @@
+:root {
+  --bg: #0b0a14;
+  --surface: #15131f;
+  --line: #2a2740;
+  --text: #ecebf5;
+  --muted: #a9a6bd;
+  --brand: #7c3aed; /* dark enough that white text on a brand button passes AA (5.7:1) */
+  --brand-ink: #ffffff;
+  --signal: #22d3ee;
+}
+
+/* Light theme for people who ask for it: same tokens, new values. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f7f6fb;
+    --surface: #ffffff;
+    --line: #d9d6e8;
+    --text: #1b1830;
+    --muted: #55506e;
+    --brand: #6d3fe0;
+    --signal: #0e7490;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+
+.page { max-width: 68ch; margin-inline: auto; padding: 48px 24px; }
+
+.eyebrow { color: var(--signal); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; }
+h1 { color: var(--text); font-size: 3rem; line-height: 1.1; }
+.lede { color: var(--muted); font-size: 1.25rem; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; margin-block: 24px; }
+.panel h2 { color: var(--text); font-size: 1.5rem; }
+.panel--alert { border-color: var(--brand); }
+.muted { color: var(--muted); }
+.link { color: var(--signal); }
+.button { background: var(--brand); color: var(--brand-ink); border: 0; border-radius: 999px; padding: 12px 24px; font: inherit; }

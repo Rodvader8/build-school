@@ -1,0 +1,83 @@
+// Check my work: runs the tests in tests/ (open them, they're short and readable), exports the app for the web
+// with `expo export`, then looks inside what it made. Every check prints PASS or FAIL.
+import { spawnSync } from 'node:child_process';
+import { existsSync, readFileSync, readdirSync, rmSync, statSync } from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+
+const out = console.log.bind(console);
+const pass = (name) => out(`PASS ${name}`);
+const fail = (name, why = '') => {
+  out(`FAIL ${name}`);
+  for (const line of String(why).trim().split('\n').filter(Boolean).slice(0, 6)) out(`  ${line}`);
+};
+const check = (name, ok, why) => (ok ? pass(name) : fail(name, why));
+const env = { ...process.env, NO_COLOR: '1', FORCE_COLOR: '0', CI: '1', EXPO_NO_TELEMETRY: '1' };
+
+if (!existsSync('node_modules/expo') || !existsSync('node_modules/vitest')) {
+  fail('dependencies are installed', 'Run "npm install" in the terminal first, then press Check my work again.');
+  process.exit(0);
+}
+
+const clean = (s) =>
+  String(s ?? '')
+    .replace(/\u001b\[[0-9;]*m/g, '')
+    .split(process.cwd()).join('.')
+    .split('\n')
+    .filter((l) => !/^\s*at /.test(l))
+    .join('\n');
+const walk = (dir, skip = []) =>
+  existsSync(dir)
+    ? readdirSync(dir).flatMap((f) => {
+        const p = path.join(dir, f);
+        if (skip.includes(f)) return [];
+        return statSync(p).isDirectory() ? walk(p, skip) : [p];
+      })
+    : [];
+const read = (f) => (existsSync(f) ? readFileSync(f, 'utf8') : '');
+const json = (f) => {
+  try {
+    return JSON.parse(read(f));
+  } catch {
+    return {};
+  }
+};
+// The app's own code: everything except dependencies, build output and the tests.
+const sourceFiles = walk('.', ['node_modules', 'dist', '.expo', 'tests']).filter((f) => /\.jsx?$/.test(f));
+const jsxFiles = sourceFiles.filter((f) => /\.jsx$/.test(f));
+
+/* ---- 1. the tests: each test title prints as one PASS or FAIL line ---- */
+if (existsSync('tests')) {
+  const resultFile = path.join(os.tmpdir(), `bs-rn-${process.pid}.json`);
+  spawnSync('npx', ['vitest', 'run', '--reporter=json', `--outputFile=${resultFile}`], { encoding: 'utf8', timeout: 300000, env });
+  let report = null;
+  try {
+    report = JSON.parse(readFileSync(resultFile, 'utf8'));
+  } catch {}
+  rmSync(resultFile, { force: true });
+  if (!report) {
+    fail('the tests run', 'Vitest produced no report. Run "npx vitest run" in the terminal to see why.');
+  } else {
+    for (const file of report.testResults) {
+      if (file.assertionResults.length === 0 && file.status === 'failed') fail(`${path.basename(file.name)} could not run`, clean(file.message));
+      for (const t of file.assertionResults) {
+        if (t.status === 'passed') pass(t.title);
+        else fail(t.title, clean((t.failureMessages ?? [])[0]).split('\n').slice(0, 3).join('\n'));
+      }
+    }
+  }
+}
+
+/* ---- 2. the web export: the same code a phone runs, bundled for a browser ---- */
+rmSync('dist', { recursive: true, force: true });
+const exported = spawnSync('npx', ['expo', 'export', '--platform', 'web'], { encoding: 'utf8', timeout: 400000, env });
+const exportLog = clean(exported.stdout + exported.stderr).split('\n').filter((l) => /error|Error|Unable|Cannot|not found|failed|Invalid/i.test(l));
+const exportOk = exported.status === 0 && existsSync('dist/index.html');
+check('the web build exports', exportOk, exportLog.join('\n') || 'expo export failed. Run "npm run export" in the terminal to read the full message.');
+const bundle = exportOk ? walk('dist/_expo/static/js').filter((f) => f.endsWith('.js')).map(read).join('\n') : '';
+
+/* ---- 3. how the styles are written ---- */
+const cardSource = read('components/RoomCard.jsx');
+check('styles live in StyleSheet.create, never as objects in the JSX', jsxFiles.every((f) => !/style=\{\{/.test(read(f)) && !/style=\{\[[^\]]*\{/.test(read(f))) && /StyleSheet\.create/.test(cardSource), 'Write style={{ ... }} as a named entry in StyleSheet.create at the bottom of the file, then use style={styles.name}.');
+check('colours come from theme.js, not typed into the component', /from '\.\.\/theme'/.test(cardSource) && !/#[0-9a-fA-F]{3,8}\b/.test(cardSource), 'Import { colors } from "../theme" and use colors.ink, colors.accent and friends instead of hex codes.');
+check('the exported app contains the prices', exportOk && bundle.includes('a night'), 'The export should include the prices.');

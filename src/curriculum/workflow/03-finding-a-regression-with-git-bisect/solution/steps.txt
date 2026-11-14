@@ -1,0 +1,12 @@
+Your task: somewhere between the v1.0 release and today, slugify broke. Find the exact commit, then fix it.
+
+1. bash setup.sh                  (builds the practice repo in app/)
+2. cd app && python3 test_slugify.py     (see it fail: that's the bug)
+3. git bisect start
+4. git bisect bad                 (HEAD is bad)
+5. git bisect good v1.0           (the release was good)
+6. git bisect run python3 test_slugify.py     (let git find it for you)
+7. git bisect log > ../bisect.log        (save the evidence)
+8. Write the first bad commit's hash into ../answer.txt  (git bisect prints it)
+9. git bisect reset               (always finish with this)
+10. Fix slugify.py and commit the fix on main. Don't rewrite history.

@@ -1,0 +1,39 @@
+---
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path or URL of the picture shown when the page is shared. Must be a JPG or PNG. */
+  ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site).href} />}
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav">
+        <a class="brand" href="/">Saltmarsh Bakehouse</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">Saltmarsh Bakehouse, an invented business for Build School.</footer>
+  </body>
+</html>

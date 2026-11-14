@@ -1,0 +1,21 @@
+# The site was rebuilt, so the old URLs need to keep working.
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/services.html"
+  to = "/services"
+  status = 302
+
+[[redirects]]
+  from = "/*/blog"
+  to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/app/*"
+  to = "/app/index.html"
+  status = 301

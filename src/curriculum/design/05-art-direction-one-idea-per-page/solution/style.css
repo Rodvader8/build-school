@@ -1,0 +1,40 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0b0a14;
+  color: #ecebf5;
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+
+.hero { max-width: 1080px; margin-inline: auto; padding: 96px 24px; }
+
+.eyebrow { color: #22d3ee; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; }
+
+/* The dominant element: nothing else on the page comes close in size. */
+h1 { font-size: 4.5rem; line-height: 1.05; letter-spacing: -0.04em; margin: 16px 0; }
+
+/* Hollow-outline emphasis: transparent fill, thin stroke. */
+.emph { color: transparent; -webkit-text-stroke: 1.5px #22d3ee; }
+
+.lede { color: #a9a6bd; font-size: 1.25rem; max-width: 52ch; }
+
+.actions { display: flex; gap: 16px; margin: 32px 0; }
+.btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #ecebf5;
+  background: transparent;
+  border: 1px solid #5b5775;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.btn--book { background: #6d3fe0; border-color: #6d3fe0; color: #ffffff; }
+.btn:hover { border-color: #22d3ee; }
+
+.proof { display: flex; gap: 48px; list-style: none; margin: 0; padding: 0; color: #a9a6bd; }
+.stat-number { display: block; font-size: 2rem; font-weight: 700; color: #ecebf5; line-height: 1.2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}

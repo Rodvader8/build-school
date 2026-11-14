@@ -1,0 +1,12 @@
+{
+  "name": "typescript-lesson",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^7.0.2"
+  }
+}

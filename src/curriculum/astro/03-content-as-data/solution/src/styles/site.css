@@ -1,0 +1,33 @@
+:root {
+  --ink: #2a1d1a;
+  --paper: #fbf5ec;
+  --crust: #b4561f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.6 Georgia, 'Times New Roman', serif;
+}
+
+.site-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid #e6d8c3; }
+.site-nav { display: flex; gap: 1.5rem; align-items: baseline; }
+.site-nav a { color: var(--ink); text-decoration: none; }
+.site-nav a:hover { color: var(--crust); }
+.site-nav .brand { margin-right: auto; font-weight: 700; font-size: 1.15rem; }
+
+main { max-width: 42rem; margin: 0 auto; padding: 3rem 1.5rem; }
+h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 1rem; }
+.lede { font-size: 1.2rem; color: #5b463f; }
+
+.site-footer { padding: 2rem 1.5rem; text-align: center; font-size: 0.9rem; color: #7a6258; }
+
+.business-list { padding-left: 1.2rem; }
+.service-list, .hours-list { list-style: none; padding: 0; }
+.service-list li { padding: 0.75rem 0; border-bottom: 1px solid #e6d8c3; }
+.service-list strong { display: block; }
+.hours-list li { display: flex; justify-content: space-between; max-width: 22rem; padding: 0.25rem 0; }
+.contact a { color: var(--crust); font-weight: 700; }

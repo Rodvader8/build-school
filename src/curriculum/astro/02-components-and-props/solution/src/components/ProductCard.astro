@@ -1,0 +1,15 @@
+---
+interface Props {
+  name: string;
+  price: number;
+  href?: string;
+}
+
+const { name, price, href } = Astro.props;
+---
+
+<article class="product-card">
+  <h3>{href ? <a href={href}>{name}</a> : name}</h3>
+  <p class="price">${price.toFixed(2)}</p>
+  <slot />
+</article>

@@ -1,0 +1,28 @@
+{
+  "name": "crumb-and-co-dashboard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "gate": "node check.mjs"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "recharts": "^2.15.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "axe-core": "4.14.0",
+    "chrome-launcher": "^1.2.0",
+    "jsdom": "^31.0.0",
+    "lighthouse": "13.6.0",
+    "playwright": "1.65.0",
+    "vite": "^8.3.0",
+    "vitest": "^5.1.0"
+  }
+}

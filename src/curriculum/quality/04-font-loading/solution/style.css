@@ -1,0 +1,36 @@
+/* Self-hosted: same origin, no extra connections, nothing to wait for but the file itself. */
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('fonts/geist-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Geist', system-ui, sans-serif;
+  color: #1b2a22;
+  line-height: 1.6;
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  line-height: 1.05;
+}
+
+.lede {
+  font-size: 1.25rem;
+}

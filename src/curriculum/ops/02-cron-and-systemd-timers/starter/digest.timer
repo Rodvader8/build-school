@@ -1,0 +1,5 @@
+[Unit]
+Description=Run the digest every morning
+
+# Add a [Timer] section: OnCalendar for 07:30 every day, and Persistent=true.
+# Add an [Install] section so the timer can be enabled: WantedBy=timers.target

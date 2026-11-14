@@ -1,0 +1,6 @@
+node_modules/
+shots/
+analytics-hits.log
+.env
+.env.*
+!.env.example

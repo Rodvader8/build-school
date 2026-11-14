@@ -1,0 +1,28 @@
+# The site was rebuilt, so the old URLs need to keep working.
+
+[[redirects]]
+  from = "/services.html"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/old-contact"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/news/*"
+  to = "/blog/:splat"
+  status = 301
+
+# One page handles every /app/ URL, and the address bar stays as it is.
+[[redirects]]
+  from = "/app/*"
+  to = "/app/index.html"
+  status = 200
+
+# Last, so it only catches what nothing above matched.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

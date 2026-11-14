@@ -1,0 +1,28 @@
+# Linux basics and ssh. Work through these in the terminal panel.
+#
+#  1. chmod +x hello.sh, then run ./hello.sh
+#  2. cp .env.example .env, then chmod 600 .env
+#  3. Add the line .env to .gitignore
+#  4. Fill in run.sh, then try:  NAME=Sam bash run.sh   and   bash run.sh
+#  5. Answer the questions below
+#  6. Fill in the webserver block in ssh_config, then run:
+#       ssh -G -F ssh_config webserver
+#     (it prints the settings and never connects anywhere)
+
+# Answer these by editing the text after the = sign (no spaces).
+# Use what you learned above, or try the commands to find out.
+
+# Written out, what are the permissions for the number 750? (nine characters, like rwxr-xr-x)
+PERMS_750=rwxr-x---
+
+# Which number means rw-r--r-- ?
+OCTAL_FOR_RW_R__R=644
+
+# Which command lists your running processes? (one word)
+LIST_PROCESSES=ps
+
+# Which command asks a process to stop, given its PID? (one word)
+STOP_PROCESS=kill
+
+# What port does ssh use when you do not set one?
+DEFAULT_SSH_PORT=22

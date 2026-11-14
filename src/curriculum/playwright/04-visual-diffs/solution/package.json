@@ -1,0 +1,10 @@
+{
+  "name": "bluegum-playwright-diff",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "pixelmatch": "8.0.0",
+    "playwright": "1.65.0",
+    "pngjs": "7.0.0"
+  }
+}

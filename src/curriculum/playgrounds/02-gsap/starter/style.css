@@ -1,0 +1,6 @@
+body { margin: 0; font-family: system-ui, sans-serif; background: #0f0d18; color: #ece9f5; }
+section { min-height: 100vh; display: grid; place-items: center; }
+.g-pin { display: flex; justify-content: center; align-items: center; gap: 2rem; }
+.g-box { width: 120px; height: 120px; border-radius: 16px; background: #8b5cf6; }
+.g-box-2 { background: #22d3ee; }
+.g-box-3 { background: #f472b6; }

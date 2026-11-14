@@ -1,0 +1,9 @@
+Your Git log, step by step. Work inside the site folder (cd site).
+
+1. git init -b main, then set a name and email for THIS repo only
+2. cp .env.example .env, then write .gitignore BEFORE the first git add
+3. git status (the .env file must not be listed), then git add . and git diff --cached
+4. git commit -m "First version of the page"
+5. git switch -c nav-links, add a <nav> to index.html, commit
+6. git switch main, change --accent in style.css, commit
+7. git merge nav-links

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b0a14;
+  --color-surface: #15122b;
+  --color-line: #2a2650;
+  --color-cream: #f4f1ea;
+  --color-muted: #a8a4c8;
+  --color-accent: #22d3ee;
+}
+
+.btn {
+  @apply inline-block rounded-full bg-accent px-5 py-2 text-sm font-semibold text-ink hover:bg-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+}

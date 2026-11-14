@@ -1,0 +1,8 @@
+node_modules/
+diff.png
+report.json
+shots/
+analytics-hits.log
+.env
+.env.*
+!.env.example

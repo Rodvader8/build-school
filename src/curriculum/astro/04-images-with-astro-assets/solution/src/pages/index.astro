@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image, Picture, getImage } from 'astro:assets';
+import hero from '../assets/hero.jpg';
+import ovens from '../assets/ovens.jpg';
+
+// Social networks don't reliably show AVIF or WebP, so the share image is always a JPG.
+const share = await getImage({ src: hero, format: 'jpg', width: 1200, height: 630 });
+---
+
+<Base title="Saltmarsh Bakehouse | Slow sourdough by the sea" description="Saltmarsh Bakehouse is an invented bakery that bakes slowly, in a hot oven, before the sun comes up." ogImage={share.src}>
+  <h1>Sourdough, baked slowly by the sea</h1>
+  <p class="lede">The hero is a Picture: AVIF and WebP, three widths, and a JPG fallback. The oven photo is a single Image.</p>
+
+  <Picture
+    class="hero-img"
+    src={hero}
+    formats={['avif', 'webp']}
+    widths={[480, 800, 1200]}
+    sizes="(min-width: 42rem) 42rem, 100vw"
+    alt="Warm illustration of a sunrise over rolling hills, the colours of a freshly baked crust"
+    loading="eager"
+    fetchpriority="high"
+  />
+
+  <figure class="photo">
+    <Image class="photo-img" src={ovens} width={800} format="webp" alt="Illustration of the bakehouse ovens glowing at dawn" loading="lazy" />
+    <figcaption>The ovens are lit at 3am.</figcaption>
+  </figure>
+</Base>

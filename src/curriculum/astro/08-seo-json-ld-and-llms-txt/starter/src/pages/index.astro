@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/saltmarsh';
+---
+
+<Base title={`${business.name} | ${business.suburb} sourdough bakery`} description={business.description}>
+  <h1>{business.name}</h1>
+  <p class="lede">{business.tagline}</p>
+  <h2>What we bake</h2>
+  <ul>
+    {business.services.map((s) => <li>{s}</li>)}
+  </ul>
+  <h2>Find us</h2>
+  <p>{business.suburb}, {business.region}. Call <a href={`tel:${business.phone.replace(/\s/g, '')}`}>{business.phone}</a>.</p>
+</Base>

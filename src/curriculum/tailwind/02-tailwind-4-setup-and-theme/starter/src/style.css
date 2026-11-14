@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Step 1: load the two fonts with @font-face (the files are in src/fonts). */
+
+/* Step 2: define the design tokens. Colours become bg-ink, text-cream and so on. */
+@theme {
+}

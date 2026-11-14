@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+playwright-report/
+analytics-hits.log
+.env
+.env.*
+!.env.example

@@ -1,0 +1,9 @@
+name: CI
+
+# TODO: run on every push to main and every pull request, then install, scan, lint, test and build.
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "write me"

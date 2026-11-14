@@ -1,0 +1,70 @@
+/* Ready-made styles for this project. Use these class names in your markup. */
+:root {
+  --ink: #f3ece1;
+  --muted: #b8ab9b;
+  --bg: #14110f;
+  --panel: #1f1a17;
+  --line: #3a312b;
+  --copper: #e08a4b;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 18px/1.65 var(--font-body, sans-serif);
+}
+
+a { color: var(--copper); }
+h1, h2, h3 { font-family: var(--font-display, serif); font-weight: 400; line-height: 1.1; margin: 0; }
+
+.site-header { position: sticky; top: 0; z-index: 5; background: rgb(20 17 15 / 0.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: baseline; max-width: 70rem; margin: 0 auto; padding: 1rem 1.5rem; }
+.site-nav a { color: var(--ink); text-decoration: none; font-size: 0.95rem; }
+.site-nav a:hover { color: var(--copper); }
+.site-nav .brand { margin-right: auto; font-family: var(--font-display, serif); font-size: 1.4rem; }
+
+.hero { display: grid; gap: 2rem; max-width: 70rem; margin: 0 auto; padding: 4rem 1.5rem; align-items: center; }
+@media (min-width: 52rem) { .hero { grid-template-columns: 1fr 1fr; padding: 6rem 1.5rem; } }
+.eyebrow { margin: 0 0 1rem; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.8rem; color: var(--copper); }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin-bottom: 1.25rem; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 34rem; }
+.button { display: inline-block; margin-top: 1rem; padding: 0.8rem 1.6rem; border-radius: 999px; background: var(--copper); color: #14110f; font-weight: 700; text-decoration: none; }
+.hero__img, .wide-img { display: block; width: 100%; height: auto; border-radius: 18px; }
+
+.section { max-width: 70rem; margin: 0 auto; padding: 4.5rem 1.5rem; border-top: 1px solid var(--line); }
+.section h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 2rem; }
+
+.card-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 52rem) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.75rem; }
+.card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.card p { margin: 0; color: var(--muted); }
+
+.steps { list-style: none; counter-reset: step; display: grid; gap: 1.25rem; padding: 0; margin: 0; }
+@media (min-width: 52rem) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step { counter-increment: step; border-top: 2px solid var(--copper); padding-top: 1rem; }
+.step::before { content: counter(step, decimal-leading-zero); color: var(--copper); font-size: 0.9rem; }
+.step h3 { font-size: 1.4rem; margin: 0.25rem 0 0.5rem; }
+.step p { margin: 0; color: var(--muted); }
+
+.quote-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 52rem) { .quote-grid { grid-template-columns: repeat(3, 1fr); } }
+.quote { margin: 0; padding: 1.5rem; border-left: 3px solid var(--copper); background: var(--panel); border-radius: 0 14px 14px 0; }
+.quote blockquote { margin: 0 0 0.75rem; font-size: 1.15rem; }
+.quote figcaption { color: var(--muted); font-size: 0.9rem; }
+
+.faq { border-bottom: 1px solid var(--line); padding: 1rem 0; }
+.faq summary { cursor: pointer; font-weight: 700; }
+.faq p { margin: 0.75rem 0 0; color: var(--muted); }
+
+.contact-grid { display: grid; gap: 2rem; }
+@media (min-width: 52rem) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+.hours-list { list-style: none; padding: 0; margin: 0; }
+.hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid var(--line); }
+
+.site-footer { padding: 2.5rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }

@@ -1,0 +1,122 @@
+/* Shared styles for the GSAP track. You don't need to change this file. */
+:root {
+  --gs-bg: #0f0d18;
+  --gs-panel: #1a1726;
+  --gs-line: #2d2940;
+  --gs-text: #ece9f5;
+  --gs-muted: #a39db8;
+  --gs-violet: #8b5cf6;
+  --gs-cyan: #22d3ee;
+  --gs-pink: #f472b6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--gs-bg);
+  color: var(--gs-text);
+  font: 16px/1.6 system-ui, sans-serif;
+}
+
+.gs-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+h1,
+h2 {
+  margin: 0 0 12px;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+.gs-note {
+  color: var(--gs-muted);
+}
+
+.gs-kicker {
+  color: var(--gs-cyan);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.gs-cta {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--gs-violet);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gs-card {
+  padding: 20px;
+  border: 1px solid var(--gs-line);
+  border-radius: 12px;
+  background-color: var(--gs-panel);
+}
+
+.gs-row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gs-spacer {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  color: var(--gs-muted);
+}
+
+/* The page colour comes from two custom properties. The CSS holds the dawn values. */
+.gs-day {
+  --day-bg: #f6d7b8;
+  --day-sun: #fff3d6;
+  height: 400vh;
+  background-color: var(--day-bg);
+}
+
+.gs-day__stick {
+  position: sticky;
+  top: 0;
+  display: grid;
+  height: 100vh;
+  overflow: hidden;
+  place-items: center;
+}
+
+.gs-sun {
+  position: absolute;
+  bottom: 12%;
+  left: 14%;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: var(--day-sun);
+}
+
+.gs-day__card {
+  position: relative;
+  max-width: 440px;
+  padding: 28px 32px;
+  border-radius: 14px;
+  background-color: rgb(12 12 28 / 0.66);
+}

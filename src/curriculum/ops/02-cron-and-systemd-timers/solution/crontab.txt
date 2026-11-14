@@ -1,0 +1,13 @@
+# Fields: minute hour day-of-month month day-of-week command
+#
+# 1. digest.sh every day at 07:30
+30 7 * * * /opt/tools/digest.sh
+#
+# 2. monitor.sh every 15 minutes
+*/15 * * * * /opt/tools/monitor.sh
+#
+# 3. report.sh at 09:00, Monday to Friday only
+0 9 * * 1-5 /opt/tools/report.sh
+#
+# 4. backup.sh at 02:00 every night, appending output to /var/log/backup-YYYY-MM-DD.log
+0 2 * * * /opt/tools/backup.sh >> /var/log/backup-$(date +\%F).log 2>&1

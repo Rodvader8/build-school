@@ -1,0 +1,8 @@
+body { margin: 0; background: #0f1419; color: #eef2f6; font: 18px/1.6 system-ui, sans-serif; }
+.top { padding: 1.25rem 1.5rem; border-bottom: 1px solid #26303b; }
+.top h1 { margin: 0; font-size: 1.5rem; }
+.page { max-width: 44rem; margin: 0 auto; padding: 1.5rem; }
+.hero { display: block; width: 100%; height: auto; border-radius: 14px; }
+.lede { color: #b6c2cf; }
+.button { font: inherit; font-weight: 600; background: #f0a24a; color: #10161c; border: 0; border-radius: 999px; padding: 0.7rem 1.4rem; cursor: pointer; }
+.chart { margin-top: 1rem; padding: 1rem; border: 1px solid #26303b; border-radius: 12px; }

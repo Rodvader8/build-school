@@ -1,0 +1,40 @@
+/* Spacing scale: base unit 8px, with a 4px half step. */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 96px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0b0a14;
+  color: #ecebf5;
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+
+.page { max-width: 1080px; margin-inline: auto; padding: 0 var(--space-4); }
+
+.section { padding: var(--space-7) 0; }
+
+h2 { font-size: 2rem; margin: 0 0 var(--space-2); }
+h3 { font-size: 1.25rem; margin: 0; }
+p { margin: 0; }
+.intro { margin-bottom: var(--space-5); }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: #15131f;
+  border: 1px solid #2a2740;
+  border-radius: 16px;
+  padding: var(--space-4);
+}

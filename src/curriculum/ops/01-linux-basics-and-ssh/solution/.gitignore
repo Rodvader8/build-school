@@ -1,0 +1,2 @@
+# Add the line that keeps your secrets file out of Git.
+.env

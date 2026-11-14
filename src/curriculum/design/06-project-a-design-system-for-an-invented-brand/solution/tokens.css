@@ -1,0 +1,27 @@
+/* Saltmarsh: a calm teal brand with an amber signal. Base 16px, ratio 1.25. Space: 4px half step, 8px unit. */
+:root {
+  --color-bg: #0f1720;
+  --color-surface: #18232f;
+  --color-text: #eaf1f7;
+  --color-muted: #9fb2c3;
+  --color-brand: #2dd4bf;
+  --color-signal: #fbbf24;
+
+  --font-heading: Georgia, serif;
+  --font-body: system-ui, sans-serif;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5625rem;
+  --step-3: 1.953rem;
+  --step-4: 2.441rem;
+  --step-5: 3.052rem;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+
+  --radius: 16px;
+}

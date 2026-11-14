@@ -1,0 +1,103 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "tiny-markdown": {
+      "name": "tiny-markdown",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1100001,
+          "name": "tiny-markdown",
+          "dependency": "tiny-markdown",
+          "title": "Script injection through crafted link titles",
+          "url": "https://example.invalid/advisory/1100001",
+          "severity": "high",
+          "cwe": ["CWE-79"],
+          "range": "<2.3.4"
+        }
+      ],
+      "effects": [],
+      "range": "<2.3.4",
+      "nodes": ["node_modules/tiny-markdown"],
+      "fixAvailable": { "name": "tiny-markdown", "version": "2.3.4", "isSemVerMajor": false }
+    },
+    "zip-sanitiser": {
+      "name": "zip-sanitiser",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1100002,
+          "name": "zip-sanitiser",
+          "dependency": "zip-sanitiser",
+          "title": "Path traversal when unpacking archives",
+          "url": "https://example.invalid/advisory/1100002",
+          "severity": "critical",
+          "cwe": ["CWE-22"],
+          "range": "<3.1.0"
+        }
+      ],
+      "effects": [],
+      "range": "<3.1.0",
+      "nodes": ["node_modules/zip-sanitiser"],
+      "fixAvailable": { "name": "zip-sanitiser", "version": "3.1.0", "isSemVerMajor": false }
+    },
+    "glob-match": {
+      "name": "glob-match",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1100003,
+          "name": "glob-match",
+          "dependency": "glob-match",
+          "title": "Regular expression denial of service in pattern matching",
+          "url": "https://example.invalid/advisory/1100003",
+          "severity": "moderate",
+          "cwe": ["CWE-1333"],
+          "range": "<3.4.2"
+        }
+      ],
+      "effects": ["build-toolkit"],
+      "range": "<3.4.2",
+      "nodes": ["node_modules/glob-match"],
+      "fixAvailable": { "name": "glob-match", "version": "3.4.2", "isSemVerMajor": false }
+    },
+    "build-toolkit": {
+      "name": "build-toolkit",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": ["glob-match"],
+      "effects": [],
+      "range": ">=4.0.0",
+      "nodes": ["node_modules/build-toolkit"],
+      "fixAvailable": { "name": "glob-match", "version": "3.4.2", "isSemVerMajor": false }
+    },
+    "slugify-au": {
+      "name": "slugify-au",
+      "severity": "low",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1100004,
+          "name": "slugify-au",
+          "dependency": "slugify-au",
+          "title": "Very long input can slow down slug generation",
+          "url": "https://example.invalid/advisory/1100004",
+          "severity": "low",
+          "cwe": ["CWE-400"],
+          "range": "*"
+        }
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": ["node_modules/slugify-au"],
+      "fixAvailable": false
+    }
+  },
+  "metadata": {
+    "vulnerabilities": { "info": 0, "low": 1, "moderate": 2, "high": 1, "critical": 1, "total": 5 },
+    "dependencies": { "prod": 41, "dev": 187, "optional": 0, "peer": 0, "peerOptional": 0, "total": 228 }
+  }
+}

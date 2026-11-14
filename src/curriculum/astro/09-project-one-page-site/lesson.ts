@@ -1,0 +1,41 @@
+import type { LessonMeta } from '../../types';
+import { passed } from '../../helpers';
+
+export default {
+  title: 'Project: a one-page premium site',
+  minutes: 90,
+  kind: 'project',
+  entry: 'src/pages/index.astro',
+  checkEntry: 'check.mjs',
+  devPort: 4819,
+  devCommand: 'npm run dev -- --port 4819 --host 127.0.0.1',
+  testSetup: 'npm install --prefer-offline --no-audit --no-fund || npm install --no-audit --no-fund',
+  checks: [
+    { label: 'The site builds', test: ({ output }) => passed(output, 'the site builds') },
+    { label: 'It is a one-page site', test: ({ output }) => passed(output, 'it is a one-page site') },
+    { label: 'One h1, taken from the data', test: ({ output }) => passed(output, 'exactly one h1, and it is the headline from the data') },
+    { label: 'The five sections exist', test: ({ output }) => passed(output, 'the page has the five sections') },
+    { label: 'Every service comes from the data', test: ({ output }) => passed(output, 'every service comes from the data') },
+    { label: 'Every process step comes from the data', test: ({ output }) => passed(output, 'every process step comes from the data') },
+    { label: 'Every review comes from the data', test: ({ output }) => passed(output, 'every review comes from the data') },
+    { label: 'Every FAQ is a details and summary', test: ({ output }) => passed(output, 'every FAQ is a details and summary') },
+    { label: 'Contact shows phone, email and hours', test: ({ output }) => passed(output, 'contact shows the phone, email and every hours row') },
+    { label: 'Headings never skip a level', test: ({ output }) => passed(output, 'headings never skip a level') },
+    { label: 'No copy typed into the page template', test: ({ output }) => passed(output, 'no copy is typed into the page template') },
+    { label: 'The hero is an eager AVIF and WebP picture', test: ({ output }) => passed(output, 'the hero is an eager AVIF and WebP picture with width and height') },
+    { label: 'Every image has alt text, lower ones are lazy', test: ({ output }) => passed(output, 'every image has alt text, and lower images are lazy') },
+    { label: 'Fonts are declared locally', test: ({ output }) => passed(output, 'fonts are declared locally, with the two variables the CSS expects') },
+    { label: 'Fonts are preloaded, nothing from Google', test: ({ output }) => passed(output, 'the fonts are preloaded and nothing comes from Google') },
+    { label: 'GSAP from npm, reduced motion respected', test: ({ output }) => passed(output, 'GSAP is bundled from npm, with reduced motion respected') },
+    { label: 'Canonical link and Open Graph tags', test: ({ output }) => passed(output, 'the head has a canonical link and Open Graph tags') },
+    { label: 'og:image is an absolute JPG', test: ({ output }) => passed(output, 'og:image is an absolute JPG that exists in dist') },
+    { label: 'JSON-LD is valid and suburb only', test: ({ output }) => passed(output, 'JSON-LD describes a CafeOrCoffeeShop, suburb only') },
+    { label: 'llms.txt and robots.txt are in the build', test: ({ output }) => passed(output, 'llms.txt and robots.txt are in the build') },
+    { label: 'No inline style attributes', test: ({ output }) => passed(output, 'no inline style attributes') },
+  ],
+  hints: [
+    'Work in layers and press Check my work after each one: the layout and head first, then the sections, then images, fonts, the script and the files in public.',
+    'Every section is the same move: brand.something.map((item) => (<element>...</element>)) inside a <section id="...">. Look back at lesson 3 if the pattern has slipped.',
+    'The class names are in src/styles/site.css, which is ready for you: .hero, .section, .card-grid, .card, .steps, .step, .quote-grid, .quote, .faq, .contact-grid and .hours-list.',
+  ],
+} satisfies LessonMeta;

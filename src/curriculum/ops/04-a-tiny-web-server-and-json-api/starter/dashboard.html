@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site monitor</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>Site monitor</h1>
+  <table>
+    <thead><tr><th>URL</th><th>Status</th><th>ms</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <script>
+    // TODO: fetch("/api/status"), then add one <tr> per site to #rows.
+    // Show "down" when the status is null and "-" when the time is null.
+    // Set each cell with textContent, so markup inside a value can never run.
+  </script>
+</body>
+</html>

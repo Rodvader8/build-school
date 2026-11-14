@@ -1,0 +1,23 @@
+{
+  "name": "harbour-hall-plan-pack",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "docx": "^9.15.0",
+    "exceljs": "^4.4.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.0"
+  },
+  "devDependencies": {
+    "jszip": "^3.10.1",
+    "vitest": "^5.1.0"
+  }
+}

@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Saltmarsh Bakehouse | Slow sourdough by the sea" description="Saltmarsh Bakehouse is an invented bakery that bakes slowly, in a hot oven, before the sun comes up.">
+  <h1>Sourdough, baked slowly by the sea</h1>
+  <p class="lede">The three cards below fade up as the page loads. GSAP comes from npm, and the animation stays still for anyone who asked for less motion.</p>
+
+  <div class="product-grid">
+    <article class="product-card reveal"><h3>Country loaf</h3><p class="price">$9.00</p></article>
+    <article class="product-card reveal"><h3>Seeded rye</h3><p class="price">$10.50</p></article>
+    <article class="product-card reveal"><h3>Cinnamon scroll</h3><p class="price">$4.50</p></article>
+  </div>
+
+  <script>
+    import '../scripts/home.js';
+  </script>
+</Base>

@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import { Picture } from 'astro:assets';
+import { halden } from '../data/halden.js';
+import hero from '../assets/img/hero.jpg';
+import driver from '../assets/img/driver.jpg';
+import walnut from '../assets/img/walnut.jpg';
+import room from '../assets/img/room.jpg';
+
+const photos = { driver, walnut };
+const tel = halden.phone.replace(/\s/g, '');
+---
+
+<Base title={halden.title} description={halden.description}>
+  <a class="skip" href="#main">Skip to the content</a>
+  <header class="bar">
+    <nav class="bar__nav" aria-label="Main">
+      <a class="bar__brand" href="/">{halden.name}</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#craft">Craft</a>
+      <a href="#listening">Listen</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <Picture class="hero__bg" src={hero} formats={['avif', 'webp']} widths={[640, 1024, 1600, 2000]} sizes="100vw" alt={halden.images.hero} loading="eager" fetchpriority="high" />
+      <div class="hero__copy">
+        <p class="eyebrow hero__in">{halden.suburb}, {halden.region}</p>
+        <h1>{halden.headline}</h1>
+        <p class="lede hero__in">{halden.intro}</p>
+        <a class="button hero__in" href="#listening">{halden.cta}</a>
+      </div>
+    </section>
+
+    <section class="philosophy" id="philosophy">
+      <h2 class="sr-only">What we believe</h2>
+      {halden.philosophy.map((line) => <p class="statement" data-reveal>{line}</p>)}
+    </section>
+
+    <section class="speakers" id="speakers">
+      <h2 class="section-title" data-reveal>Two speakers, made to order</h2>
+      {halden.speakers.map((s, i) => (
+        <article class={`speaker ${i % 2 ? 'speaker--flip' : ''}`}>
+          <div class="speaker__media">
+            <Picture class="speaker__img" src={photos[s.image]} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 60rem) 560px, 100vw" alt={halden.images[s.image]} loading="lazy" />
+          </div>
+          <div class="speaker__body" data-reveal>
+            <h3>{s.name}</h3>
+            <p class="speaker__tag">{s.tagline}</p>
+            <p>{s.body}</p>
+            <dl class="specs">
+              {s.specs.map((spec) => (
+                <div class="specs__row">
+                  <dt>{spec.label}</dt>
+                  <dd>{spec.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="craft" id="craft">
+      <div class="craft__intro">
+        <h2 class="section-title" data-reveal>How a pair gets made</h2>
+        <div class="craft__media">
+          <Picture class="craft__img" src={room} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 60rem) 480px, 100vw" alt={halden.images.room} loading="lazy" />
+        </div>
+      </div>
+      <ol class="craft__steps">
+        <li class="craft__rail" aria-hidden="true"><span class="craft__fill"></span></li>
+        {halden.craft.map((c) => (
+          <li class="craft__step" data-reveal>
+            <h3>{c.title}</h3>
+            <p>{c.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="listening" id="listening">
+      <figure class="quote" data-reveal>
+        <blockquote>{halden.quote.text}</blockquote>
+        <figcaption>{halden.quote.who}</figcaption>
+      </figure>
+      <div class="listening__cta" data-reveal>
+        <h2>Come and hear a pair.</h2>
+        <p>{halden.hours}</p>
+        <p class="listening__links">
+          <a class="button" href={`mailto:${halden.email}`}>{halden.email}</a>
+          <a class="link" href={`tel:${tel}`}>{halden.phone}</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>{halden.name}, {halden.suburb} {halden.region}. Built to order.</p>
+  </footer>
+
+  <script>
+    import '../scripts/home.js';
+  </script>
+</Base>

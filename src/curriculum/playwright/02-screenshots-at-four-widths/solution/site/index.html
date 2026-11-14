@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blue Gum Landscaping</title>
+    <meta name="description" content="Garden design and maintenance for Melbourne's northern suburbs." />
+    <link rel="stylesheet" href="/style.css" />
+    <!-- Stands in for Google Analytics or Hotjar: it phones home every time the page loads. -->
+    <script src="/analytics.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="bar">
+      <h1>Blue Gum Landscaping</h1>
+      <button id="menu-button" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav id="menu" hidden>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section class="panel hero">
+        <h2>Gardens that look after themselves</h2>
+        <p>Native garden design and maintenance for Melbourne's northern suburbs.</p>
+      </section>
+      <section class="panel" id="services">
+        <h2>Services</h2>
+        <ul>
+          <li>Garden design</li>
+          <li>Planting and mulching</li>
+          <li>Regular maintenance</li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h2>How we work</h2>
+        <p>We visit, listen, then draw a planting plan that suits your block and your budget.</p>
+      </section>
+      <section class="panel">
+        <h2>Recent projects</h2>
+        <p>A front garden in Northcote, a courtyard in Thornbury and a native hedge in Preston.</p>
+      </section>
+      <section class="panel" id="contact">
+        <h2>Ask for a quote</h2>
+        <form id="enquiry" novalidate>
+          <label for="name">Your name</label>
+          <input id="name" name="name" autocomplete="name" />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+          <button type="submit">Send enquiry</button>
+        </form>
+        <p id="error" role="alert" hidden>Please enter your name and a valid email.</p>
+        <p id="thanks" role="status" hidden>Thanks, we'll be in touch.</p>
+      </section>
+    </main>
+    <footer class="bar"><p>Blue Gum Landscaping, Northcote VIC</p></footer>
+  </body>
+</html>

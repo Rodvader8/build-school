@@ -1,0 +1,7 @@
+# Netlify reads this file on every deploy.
+
+[build]
+  command = "npm build"
+  publish = "public"
+
+# TODO: pin the Node version here, then give deploy previews their own SITE_ENV.

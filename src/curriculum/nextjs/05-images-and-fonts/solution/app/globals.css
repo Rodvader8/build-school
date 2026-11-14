@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fbf6ee;
+  --color-oat: #efe4d2;
+  --color-ink: #2a1f17;
+  --color-crust: #b4621f;
+  --color-crust-dark: #8a4a17;
+}
+
+/* "inline" lets these point at the CSS variables next/font creates in the layout. */
+@theme inline {
+  --font-display: var(--font-instrument);
+  --font-sans: var(--font-geist);
+}
+
+@layer base {
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+}

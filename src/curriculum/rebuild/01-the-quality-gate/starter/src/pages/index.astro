@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import { Picture } from 'astro:assets';
+import { site } from '../data/site.js';
+import hero from '../assets/img/hero.jpg';
+import kiln from '../assets/img/kiln.jpg';
+---
+
+<Base title={site.title} description={site.description}>
+  <a class="skip" href="#main">Skip to the content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="/">{site.name}</a>
+      <a href="#collections">Collections</a>
+      <a href="#process">Process</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero__copy reveal">
+        <p class="eyebrow">{site.suburb}, {site.region}</p>
+        <h1>{site.headline}</h1>
+        <p class="lede">{site.intro}</p>
+        <a class="button" href="#visit">Visit the studio</a>
+      </div>
+      <img class="hero__img" src="/hero-thumb.jpg" alt={site.heroAlt} />
+    </section>
+
+    <section class="strip" aria-label="What we make">
+      <p class="strip__track">Wheel thrown <span aria-hidden="true">/</span> Wood fired <span aria-hidden="true">/</span> Glazed by hand <span aria-hidden="true">/</span> Made in small batches</p>
+    </section>
+
+    <section class="section" id="collections">
+      <h2>Three things we make</h2>
+      <div class="card-grid">
+        {site.collections.map((c) => (
+          <article class="card reveal">
+            <h3>{c.title}</h3>
+            <p>{c.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section split" id="process">
+      <div>
+        <h2>From clay to kiln</h2>
+        <ol class="steps">
+          {site.steps.map((s) => (
+            <li class="step reveal">
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <Picture class="wide-img" src={kiln} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 52rem) 520px, 100vw" alt={site.kilnAlt} loading="lazy" />
+    </section>
+
+    <section class="section">
+      <figure class="quote reveal">
+        <blockquote>{site.quote.text}</blockquote>
+        <figcaption>{site.quote.who}</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="visit" style="padding-top: 2rem">
+      <h1>Visit the studio</h1>
+      <div class="visit">
+        <ul class="hours">
+          {site.hours.map((h) => <li><span>{h.days.join(', ')}</span> <span>{h.opens} to {h.closes}</span></li>)}
+        </ul>
+        <p class="visit__contact">
+          <a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a><br />
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>{site.name}, {site.suburb} {site.region}. Studio visits on Saturdays and Sundays.</p>
+  </footer>
+
+  <script>
+    import '../scripts/home.js';
+  </script>
+</Base>

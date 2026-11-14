@@ -1,0 +1,4 @@
+{
+  "mustPass": ["unsized-images", "render-blocking-insight", "image-size-responsive"],
+  "maxNumeric": { "total-byte-weight": 400000 }
+}

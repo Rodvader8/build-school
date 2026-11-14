@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design system specimen</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Design system</p>
+      <h1>Your brand name</h1>
+      <p class="lede">Write one sentence about the brand you've invented. The page below proves its system holds together.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="colours" class="block">
+      <h2>Colours</h2>
+      <ul class="swatches">
+        <li class="swatch"><div class="swatch-chip swatch-chip--bg"></div><span class="swatch-name">bg</span></li>
+        <li class="swatch"><div class="swatch-chip swatch-chip--surface"></div><span class="swatch-name">surface</span></li>
+        <li class="swatch"><div class="swatch-chip swatch-chip--text"></div><span class="swatch-name">text</span></li>
+        <li class="swatch"><div class="swatch-chip swatch-chip--muted"></div><span class="swatch-name">muted</span></li>
+        <li class="swatch"><div class="swatch-chip swatch-chip--brand"></div><span class="swatch-name">brand</span></li>
+        <li class="swatch"><div class="swatch-chip swatch-chip--signal"></div><span class="swatch-name">signal</span></li>
+      </ul>
+    </section>
+
+    <section id="type" class="block">
+      <h2>Type scale</h2>
+      <p class="sample sample--0">Step 0: the quick brown fox</p>
+      <p class="sample sample--1">Step 1: the quick brown fox</p>
+      <p class="sample sample--2">Step 2: the quick brown fox</p>
+      <p class="sample sample--3">Step 3: the quick brown fox</p>
+      <p class="sample sample--4">Step 4: the quick brown fox</p>
+      <p class="sample sample--5">Step 5: the quick brown fox</p>
+    </section>
+
+    <section id="spacing" class="block">
+      <h2>Spacing</h2>
+      <ul class="space-samples">
+        <li class="space-sample"><span class="space-label">space-1</span><div class="bar bar--1"></div></li>
+        <li class="space-sample"><span class="space-label">space-2</span><div class="bar bar--2"></div></li>
+        <li class="space-sample"><span class="space-label">space-3</span><div class="bar bar--3"></div></li>
+        <li class="space-sample"><span class="space-label">space-4</span><div class="bar bar--4"></div></li>
+        <li class="space-sample"><span class="space-label">space-5</span><div class="bar bar--5"></div></li>
+        <li class="space-sample"><span class="space-label">space-6</span><div class="bar bar--6"></div></li>
+      </ul>
+    </section>
+
+    <section id="components" class="block">
+      <h2>Components</h2>
+      <div class="demo-row">
+        <a class="btn btn--primary" href="#">Primary action</a>
+        <a class="btn btn--ghost" href="#">Secondary</a>
+      </div>
+      <article class="card">
+        <h3>A card</h3>
+        <p>Cards use the surface colour, the radius token and one padding value on every side.</p>
+      </article>
+      <label class="field">Email address
+        <input class="input" type="email" placeholder="you@example.com">
+      </label>
+    </section>
+  </main>
+</body>
+</html>

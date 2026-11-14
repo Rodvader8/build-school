@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import { Picture } from 'astro:assets';
+import { ironbark } from '../data/ironbark.js';
+import hero from '../assets/img/hero.jpg';
+import project1 from '../assets/img/project-1.jpg';
+import project2 from '../assets/img/project-2.jpg';
+import project3 from '../assets/img/project-3.jpg';
+
+const home = ironbark.pages.home;
+const photos = { 'project-1': project1, 'project-2': project2, 'project-3': project3 };
+---
+
+<Base page="home">
+  <section class="hero">
+    <div class="hero__copy reveal">
+      <p class="eyebrow">{ironbark.suburb}, {ironbark.region}</p>
+      <h1>{home.headline}</h1>
+      <p class="lede">{home.intro}</p>
+      <a class="button" href="/contact/">{home.cta}</a>
+    </div>
+    <Picture class="hero__img" src={hero} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 56rem) 540px, 100vw" alt={ironbark.images.hero} loading="eager" fetchpriority="high" />
+  </section>
+
+  <section class="stats" aria-label="At a glance">
+    <ul class="stats__list">
+      {home.stats.map((s) => (
+        <li class="stat reveal"><span class="stat__figure">{s.figure}</span> <span class="stat__label">{s.label}</span></li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>{home.projectsTitle}</h2>
+    <div class="projects">
+      {home.projects.map((p) => (
+        <article class="project reveal">
+          <Picture class="project__img" src={photos[p.image]} formats={['avif', 'webp']} widths={[480, 800]} sizes="(min-width: 56rem) 360px, 100vw" alt={ironbark.images[p.image]} loading="lazy" />
+          <h3>{p.title}</h3>
+          <p class="project__place">{p.place}</p>
+          <p>{p.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <figure class="quote reveal">
+      <blockquote>{home.quote.text}</blockquote>
+      <figcaption>{home.quote.who}</figcaption>
+    </figure>
+  </section>
+</Base>

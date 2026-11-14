@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Hotel Marlow Door Code",
+    "slug": "hotel-marlow-door-code",
+    "version": "1.0.0",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    }
+  }
+}

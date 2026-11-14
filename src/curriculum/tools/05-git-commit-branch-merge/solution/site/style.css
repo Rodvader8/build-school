@@ -1,0 +1,12 @@
+:root {
+  --accent: #7c5cff;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: #1b2030;
+}
+
+h1 {
+  color: var(--accent);
+}

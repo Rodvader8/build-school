@@ -1,0 +1,11 @@
+# Fields: minute hour day-of-month month day-of-week command
+#
+# 1. digest.sh every day at 07:30 (this line has the fields the wrong way round: fix it)
+7 30 * * * /opt/tools/digest.sh
+#
+# 2. monitor.sh every 15 minutes
+#
+# 3. report.sh at 09:00, Monday to Friday only
+#
+# 4. backup.sh at 02:00 every night, appending output to /var/log/backup-YYYY-MM-DD.log
+#    (build the date with $(date +%F), and remember what cron does with a bare %)

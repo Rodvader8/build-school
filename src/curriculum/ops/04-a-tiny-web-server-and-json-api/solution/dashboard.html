@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site monitor</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>Site monitor</h1>
+  <table>
+    <thead><tr><th>URL</th><th>Status</th><th>ms</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <script>
+    async function load() {
+      const res = await fetch("/api/status");
+      const sites = await res.json();
+      const rows = document.getElementById("rows");
+      rows.replaceChildren();
+      for (const site of sites) {
+        const tr = document.createElement("tr");
+        for (const value of [site.url, site.status ?? "down", site.ms ?? "-"]) {
+          const td = document.createElement("td");
+          td.textContent = value;
+          tr.append(td);
+        }
+        rows.append(tr);
+      }
+    }
+    load();
+    setInterval(load, 30000);
+  </script>
+</body>
+</html>

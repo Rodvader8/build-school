@@ -1,0 +1,5 @@
+# One answer per line, after the colon. No quotes.
+A: ../shared/logo.svg
+B: ../site-monitor/reports/2026-11/summary.md
+C: ../../config/settings.json
+D: /replaced/by/solve.sh

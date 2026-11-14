@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dark mode with a class</title>
+    <!-- Step 4: an inline script goes here, before the page paints. -->
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="min-h-screen bg-white text-slate-900">
+    <main class="mx-auto flex max-w-xl flex-col gap-6 px-6 py-16">
+      <div class="flex items-center justify-between">
+        <p class="text-sm font-semibold uppercase tracking-widest text-sky-700">Portal</p>
+        <button id="theme-toggle" type="button" aria-pressed="false" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-100">Dark mode</button>
+      </div>
+      <h1 class="text-4xl font-semibold">Your accounts</h1>
+      <p class="text-slate-600">The page follows your system setting the first time, then remembers the button.</p>
+      <section class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-lg font-semibold">Net worth</h2>
+        <p class="mt-2 text-3xl font-semibold">$8,080,000</p>
+      </section>
+    </main>
+    <script type="module" src="/src/theme.js"></script>
+  </body>
+</html>

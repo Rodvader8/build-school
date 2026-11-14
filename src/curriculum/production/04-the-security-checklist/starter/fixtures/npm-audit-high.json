@@ -1,0 +1,9 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "left-padder": { "name": "left-padder", "severity": "high", "isDirect": true, "via": ["Prototype pollution"], "fixAvailable": true },
+    "tiny-parser": { "name": "tiny-parser", "severity": "moderate", "isDirect": false, "via": ["Regular expression denial of service"], "fixAvailable": false },
+    "old-crypto": { "name": "old-crypto", "severity": "critical", "isDirect": false, "via": ["Weak random numbers"], "fixAvailable": false }
+  },
+  "metadata": { "vulnerabilities": { "info": 0, "low": 0, "moderate": 1, "high": 1, "critical": 1, "total": 3 } }
+}
